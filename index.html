@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cash Register</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Cash Register Manager</h1>
+      <div class="input-section">
+        <label for="bill-amount" class="amount-label">Enter Bill Amount</label>
+        <input id="bill-amount" class="amount-input" type="number" />
+        <label for="cash-given" class="amount-label"
+          >Enter the Cash Given</label
+        >
+        <input id="cash-given" class="amount-input" type="number" />
+        <button class="done-btn" id="done-btn">Done</button>
+        <h3 class="hide-message" id="message"></h3>
+      </div>
+    </main>
+    <table class="change-table">
+      <caption>
+        Return Change
+      </caption>
+      <tr>
+        <th>No. of Notes</th>
+        <td class="no-of-notes"></td>
+        <td class="no-of-notes"></td>
+        <td class="no-of-notes"></td>
+        <td class="no-of-notes"></td>
+        <td class="no-of-notes"></td>
+        <td class="no-of-notes"></td>
+        <td class="no-of-notes"></td>
+      </tr>
+      <tr>
+        <th class="no-of-notes">Note</th>
+        <td class="notes">2000</td>
+        <td class="notes">500</td>
+        <td class="notes">100</td>
+        <td class="notes">20</td>
+        <td class="notes">10</td>
+        <td class="notes">5</td>
+        <td class="notes">1</td>
+      </tr>
+    </table>
+    <footer class="container footer">
+      <div class="d-flex">
+        <p class="text-center made-by">Made by <a target="_blank" href="http://karthikraju.netlify.app">Karthik Raju<a><p>
+        <div class="social-links">
+          <a target="_blank" href="http://twitter.com/karthikraju391">Twitter</a>
+          <a target="_blank" href="http://github.com/KarthikRaju391">Github</a>
+          <a target="_blank" href="https://linkedin.com/in/karthik-s-raju/">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
