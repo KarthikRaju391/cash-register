@@ -6,41 +6,42 @@ const numOfNotes = document.querySelectorAll('.no-of-notes');
 
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 
-const showMessage = (msg) => {
-  message.innerText = msg;
-  message.classList.replace('hide-message', 'show-message');
-}
+const showMessage = msg => {
+   message.innerText = msg;
+   message.classList.replace('hide-message', 'show-message');
+};
 
 const hideMessage = () => {
-  message.classList.replace('show-message', 'hide-message');
-}
+   message.classList.replace('show-message', 'hide-message');
+};
 
-const calculateChange = (amount) => {
-  for(let i = 0; i< availableNotes.length; i++){
-    const numberOfNotes = Math.floor(amount / availableNotes[i]);
-    amount = amount % availableNotes[i];
-    numOfNotes[i].innerText = numberOfNotes;
-  }
-}
+const calculateChange = amount => {
+   for (let i = 0; i < availableNotes.length; i++) {
+      const numberOfNotes = Math.floor(amount / availableNotes[i]);
+      amount = amount % availableNotes[i];
+      numOfNotes[i].innerText = numberOfNotes;
+   }
+};
 
-function validateBill(){
-  hideMessage();
-  if(Number(billAmount.value) < 0){
-    showMessage("Bill amount must be more than 0!");
-  }
-  if(Number(billAmount.value) > 0){
-    if(Number(cashGiven.value) > Number(billAmount.value)){
-      const amountToBeReturned = Number(cashGiven.value) - Number(billAmount.value);
-      calculateChange(amountToBeReturned);
-    }
-    if(Number(cashGiven.value) < Number(billAmount.value)){
-      showMessage(`Let's wash the plates together!`);
-    }
-  }
+function validateBill() {
+   hideMessage();
+   if (billAmount.value && cashGiven.value) {
+      if (Number(billAmount.value) < 0) {
+         showMessage('Bill amount must be more than 0!');
+      }
+      if (Number(billAmount.value) > 0) {
+         if (Number(cashGiven.value) > Number(billAmount.value)) {
+            const amountToBeReturned =
+               Number(cashGiven.value) - Number(billAmount.value);
+            calculateChange(amountToBeReturned);
+         }
+         if (Number(cashGiven.value) < Number(billAmount.value)) {
+            showMessage(`Let's wash the plates together!`);
+         }
+      }
+   } else{
+     showMessage('Please enter all the inputs!')
+   }
 }
 
 doneBtn.addEventListener('click', validateBill);
-
-
-
-
